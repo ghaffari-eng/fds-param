@@ -1,0 +1,20 @@
+template: room_fire.fds.template
+fds_command: ~/firemodels/fds/Build/ompi_gnu_linux/fds_ompi_gnu_linux
+output_dir: ./fds_param_results
+parallel_runs: 2
+
+parameters:
+  hrrpua:
+    type: sweep
+    min: 100
+    max: 300
+    steps: 3
+
+objectives:
+  - device_id: T_ceiling
+    quantity: max
+  - device_id: T_ceiling
+    quantity: final
+
+study:
+  type: parametric
